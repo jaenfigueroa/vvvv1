@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CAJA QUE CAMBIA DE COLORES */
+div {
+    width: 200px;
+    height: 200px;
+
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    border-radius: 10px;
+    box-shadow: black 5px 5px 60px 0px;
+
+}
+
+/* CAJA QUE CAMBIA DE COLORES - ANTES*/
+div::before{
+    content: "";
+    background-image: conic-gradient(#2600ff 10deg,transparent 200deg);
+    width: 150%;
+    height: 150%;
+    position: absolute; 
+    animation: rotate 1s linear infinite;
+}
+
+/* CAJA FLOTANTE DE COLOR NEGRO - DESPUES */
+div::after{
+    content: "PATO";
+    color: white;
+    width: 185px;
+    height: 185px;
+    background: #000000;
+    position: absolute;
+
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    border-radius: 10px;
+}
+@keyframes rotate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(-360deg); 
+    }
+}
